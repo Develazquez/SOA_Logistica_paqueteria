@@ -1,0 +1,22 @@
+{
+  "name": "logistica-paqueteria-soa",
+  "version": "1.0.0",
+  "description": "Monorepo SOA para logistica/paqueteria con 3 servicios NestJS, Redis y bases de datos separadas.",
+  "private": true,
+  "packageManager": "pnpm@11.7.0",
+  "scripts": {
+    "install:all": "pnpm install",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "start:dev:shipments": "pnpm --dir shipments-service start:dev",
+    "start:dev:parcels": "pnpm --dir parcels-service start:dev",
+    "start:dev:routes": "pnpm --dir routes-service start:dev",
+    "compose:config": "docker compose -f infra-local/docker-compose.yml config",
+    "compose:up": "docker compose -f infra-local/docker-compose.yml up --build",
+    "compose:down": "docker compose -f infra-local/docker-compose.yml down",
+    "docker:df": "docker system df",
+    "docker:prune-build-cache": "docker builder prune"
+  }
+}
