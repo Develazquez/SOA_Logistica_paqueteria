@@ -2,3 +2,13 @@ packages:
   - "shipments-service"
   - "parcels-service"
   - "routes-service"
+
+onlyBuiltDependencies:
+  - "@nestjs/core"
+
+ignoredBuiltDependencies:
+  - "@scarf/scarf"
+
+allowBuilds:
+  "@nestjs/core": true
+  "@scarf/scarf": false
