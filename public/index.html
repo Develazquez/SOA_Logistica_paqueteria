@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SOA Logistica / Paqueteria</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      body {
+        margin: 0;
+        background: #f7f8fb;
+        color: #172033;
+      }
+
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 56px 24px;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.08;
+      }
+
+      p {
+        max-width: 760px;
+        color: #4b5565;
+        font-size: 1.05rem;
+      }
+
+      section {
+        margin-top: 32px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid #d9dee8;
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 18px;
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+      }
+
+      code {
+        border-radius: 4px;
+        background: #eef2f7;
+        padding: 2px 5px;
+        font-size: 0.92em;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #0b1020;
+          color: #f8fafc;
+        }
+
+        p {
+          color: #c6cfdd;
+        }
+
+        .card {
+          border-color: #253047;
+          background: #11182a;
+        }
+
+        code {
+          background: #1c2638;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>SOA Logistica / Paqueteria</h1>
+      <p>
+        Monorepo academico con tres servicios NestJS independientes: envios,
+        paquetes y rutas. La arquitectura implementa contratos REST, Saga
+        orquestada, Redis pub/sub y bases de datos separadas.
+      </p>
+
+      <section class="grid" aria-label="Servicios del sistema">
+        <article class="card">
+          <h2>shipments-service</h2>
+          <p>Orquestador de Saga, JWT, confirmacion de envios y publicacion de eventos.</p>
+        </article>
+        <article class="card">
+          <h2>parcels-service</h2>
+          <p>Validacion de paquetes, reserva de etiqueta y compensacion.</p>
+        </article>
+        <article class="card">
+          <h2>routes-service</h2>
+          <p>Cobertura, reserva de rutas y consumo del evento <code>shipment.created</code>.</p>
+        </article>
+      </section>
+
+      <section>
+        <p>
+          Nota: Vercel publica esta pagina estatica del proyecto. Para ejecutar
+          los tres servicios backend con Redis y PostgreSQL se recomienda usar
+          Docker Compose localmente o una plataforma de contenedores como
+          Railway, Render, Fly.io o Azure Container Apps.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
