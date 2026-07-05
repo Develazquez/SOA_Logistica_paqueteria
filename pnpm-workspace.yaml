@@ -1,0 +1,4 @@
+packages:
+  - "shipments-service"
+  - "parcels-service"
+  - "routes-service"

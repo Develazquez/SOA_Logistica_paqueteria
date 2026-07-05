@@ -1,0 +1,22 @@
+node_modules/
+dist/
+coverage/
+.env
+*.log
+pnpm-debug.log
+npm-debug.log
+.DS_Store
+
+# Service-local generated files
+shipments-service/node_modules/
+shipments-service/dist/
+shipments-service/coverage/
+shipments-service/.env
+parcels-service/node_modules/
+parcels-service/dist/
+parcels-service/coverage/
+parcels-service/.env
+routes-service/node_modules/
+routes-service/dist/
+routes-service/coverage/
+routes-service/.env
